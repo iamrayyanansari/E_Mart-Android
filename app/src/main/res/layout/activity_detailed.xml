@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailedActivity">
+
+    <ImageView
+        android:id="@+id/detailed_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:translationY="-50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailed_img">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detailed_name"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/aclonica"
+                    android:text="Product Name"
+                    android:textColor="@color/black" />
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.0"
+                    android:fontFamily="@font/aclonica"
+                    android:textColor="@color/black"
+                    android:layout_toStartOf="@id/my_rating"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:textStyle="bold" />
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/my_rating"
+                    android:layout_marginTop="10dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="0.1"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_alignParentRight="true"
+
+
+
+                />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:fontFamily="@font/aclonica"
+                android:id="@+id/detailed_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="What are features and benefits? Think about what gets you excited about your product that makes it different from your competitors’ products. It might be careful construction, ethically sourced materials, or all the bells and whistles you dreamed up over drinks one night. Those are features."
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textSize="21sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:fontFamily="@font/aclonica"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_500"
+                    />
+                <TextView
+                    android:id="@+id/detailed_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_500"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_marginRight="15dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/plusicon"
+                    android:id="@+id/add_item" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/quantity"
+                    android:text="100"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+
+                    />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/iconminus"
+                    android:layout_marginLeft="15dp"
+                    android:id="@+id/remove_item" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+android:backgroundTint="@color/purple_500"
+        android:id="@+id/add_to_cart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/mycart"
+        android:drawableRight="@drawable/mycart"
+        android:drawableTint="@color/white"
+        android:padding="14sp"
+        android:text="add to cart"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardview"
+        app:layout_constraintVertical_bias="0.21"
+        app:layout_constraintWidth_percent=".7" />
+
+    <Button
+        android:id="@+id/buy_now"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="60dp"
+        android:drawableLeft="@drawable/ic_baseline_shopping_cart_24"
+        android:drawableRight="@drawable/ic_baseline_shopping_cart_24"
+        android:drawableTint="@color/white"
+        android:padding="14sp"
+        android:text="Buy now"
+        android:backgroundTint="@color/blue"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_to_cart"
+        app:layout_constraintWidth_percent=".7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
