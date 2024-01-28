@@ -59,7 +59,8 @@
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:resource="@array/preloaded_fonts"
+            android:value="rzp_test_lhK8Bzt5B5IwNG"/>
     </application>
 
 </manifest>

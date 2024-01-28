@@ -27,6 +27,9 @@ import java.util.List;
 
 import models.AddressModel;
 import models.MyCartModel;
+import models.NewProductsModel;
+import models.PopularProductsModel;
+import models.ShowAllModel;
 
 public class AddressActivity extends AppCompatActivity implements AddressAdapter.SelectedAddress {
     Button addAddress;
@@ -48,6 +51,9 @@ public class AddressActivity extends AppCompatActivity implements AddressAdapter
         toolbar = findViewById(R.id.address_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+//        data from detasil
+        Object obj = getIntent().getSerializableExtra("item");
 
         firestore =FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
@@ -76,7 +82,23 @@ public class AddressActivity extends AppCompatActivity implements AddressAdapter
         paymentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AddressActivity.this,PaymentActivity.class));
+
+                double amount =0.0;
+                if(obj instanceof NewProductsModel){
+                    NewProductsModel newProductsModel = (NewProductsModel) obj;
+                    amount = newProductsModel.getPrice();
+                }
+                if(obj instanceof PopularProductsModel){
+                    PopularProductsModel popularProductsModel = (PopularProductsModel) obj;
+                    amount = popularProductsModel.getPrice();
+                }
+                if(obj instanceof ShowAllModel){
+                    ShowAllModel showAllModel = (ShowAllModel) obj;
+                    amount = showAllModel.getPrice();
+                }
+                Intent intent  = new Intent(AddressActivity.this, PaymentActivity.class);
+                intent.putExtra("amount",amount);
+                startActivity(intent);
 
             }
         });

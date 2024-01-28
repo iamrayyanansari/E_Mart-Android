@@ -49,4 +49,9 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+//    implementation ("com.github.kittinunf.fuel:fuel:2.3.1")
+//   implementation ("com.github.kittinunf.fuel:fuel-json:2.3.1")
+//    implementation ("com.paytm.appinvokesdk:appinvokesdk:1.6.11")
+    implementation ("com.razorpay:checkout:1.6.33")
+
 }

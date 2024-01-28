@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar; // Import the correct Toolbar class
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -58,16 +59,16 @@ public class AddAddressActivity extends AppCompatActivity {
                 String userPhoneNumber = phoneNumber.getText().toString();
                 String finalAddress= "";
                 if(!userName.isEmpty()){
-                    finalAddress+=userName;
+                    finalAddress+=userName+",";
                 }
                 if(!userAddress.isEmpty()){
-                    finalAddress+=userAddress;
+                    finalAddress+=userAddress+",";
                 }if(!userCity.isEmpty()){
-                    finalAddress+=userCity;
+                    finalAddress+=userCity+",";
                 }if(!userPostalCode .isEmpty()){
-                    finalAddress+=userPostalCode ;
+                    finalAddress+=userPostalCode+"," ;
                 }if(!userPhoneNumber.isEmpty()){
-                    finalAddress+=userPhoneNumber;
+                    finalAddress+=userPhoneNumber+".";
                 }
                 if(!userName.isEmpty() &&!userAddress.isEmpty() &&!userCity.isEmpty() &&!userPostalCode.isEmpty() &&!userPhoneNumber.isEmpty() ){
                     Map<String,String> map = new HashMap<>();
@@ -78,6 +79,8 @@ public class AddAddressActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<DocumentReference> task) {
                                     if(task.isSuccessful()){
                                         Toast.makeText(AddAddressActivity.this, "Address added successfully!", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(AddAddressActivity.this,DetailedActivity.class));
+                                        finish();
                                     }
                                 }
                             });

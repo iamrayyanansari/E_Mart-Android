@@ -119,7 +119,21 @@ public class DetailedActivity extends AppCompatActivity {
         buyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DetailedActivity.this,AddressActivity.class));
+//                startActivity(new Intent(DetailedActivity.this,AddressActivity.class));
+                Intent intent = new Intent(DetailedActivity.this,AddressActivity.class);
+                if(newProductsModel !=null){
+                    intent.putExtra("item", newProductsModel);
+                }
+                if(popularProductsModel !=null){
+                    intent.putExtra("item", popularProductsModel);
+
+                }
+
+                if(showAllModel !=null){
+                    intent.putExtra("item", showAllModel);
+
+                }
+                startActivity(intent);
             }
         });
         addToCart.setOnClickListener(new View.OnClickListener() {
