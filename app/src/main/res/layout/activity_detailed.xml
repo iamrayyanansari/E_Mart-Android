@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".activities.DetailedActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Prduct Detail"
+        />
+
     <ImageView
         android:id="@+id/detailed_img"
         android:layout_width="match_parent"
@@ -15,6 +24,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/detailed_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Prduct Detail" />
+
 
     <androidx.cardview.widget.CardView
         android:translationY="-50dp"
@@ -142,7 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/quantity"
-                    android:text="100"
+                    android:text="1"
                     android:textSize="30sp"
                     android:textStyle="bold"
 
